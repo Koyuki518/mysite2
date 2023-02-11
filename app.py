@@ -39,7 +39,7 @@ st.sidebar.write("""
 """)
 ymin, ymax = st.sidebar.slider(
     '範囲指定をしてください。',
-    0.0, 3500.0, (0.0, 3500.0)
+    0.0, 400.0, (0.0, 400.0)
 )
 
 tickers = {
@@ -54,7 +54,8 @@ tickers = {
 df = get_data(days, tickers)
 companies = st.multiselect(
     '会社名を選択してください。',
-    ['google', 'facebook', 'apple','microsoft', 'netflix']
+    ['google', 'facebook', 'apple','microsoft', 'netflix'],
+    default=['google']
 )
 
 if not companies:
